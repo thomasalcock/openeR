@@ -22,8 +22,7 @@ doc_skeleton <- function(project_name, content, contrib, summary){
   doc_context <- rstudioapi::getActiveDocumentContext()
   position <- doc_context$selection[[1]]$range$start
 
-  skeleton <- paste('# ----------------------------------------------------------------------------- #
- # Project:', project_name, '\n',
+  skeleton <- paste(' # ----------------------------------------------------------------------------- # \n # Project:', project_name, '\n',
                     '# Content:', content, '\n',
                     '# Contributors:', contrib, '\n',
                     '# Last update on:', Sys.Date(), '\n',

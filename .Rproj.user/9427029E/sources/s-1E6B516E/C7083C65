@@ -7,13 +7,13 @@
     "folds" : "",
     "hash" : "0",
     "id" : "C7083C65",
-    "lastKnownWriteTime" : 1584536258,
-    "last_content_update" : 1584536258289,
+    "lastKnownWriteTime" : 1584544215,
+    "last_content_update" : 1584544215980,
     "path" : "~/Projekte/openeR/R/doc_skeleton.R",
     "project_path" : "R/doc_skeleton.R",
     "properties" : {
-        "cursorPosition" : "6,10",
-        "scrollLine" : "0",
+        "cursorPosition" : "20,0",
+        "scrollLine" : "17",
         "tempName" : "Untitled2"
     },
     "read_only" : false,

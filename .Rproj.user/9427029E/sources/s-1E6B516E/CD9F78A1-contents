@@ -18,8 +18,6 @@ contain the following:
 4. The date at which the documentation was set up
 5. A more detailed summary of the scripts contents
 
-How does it work? `openeR` is built on top of `shiny`and `miniUI`, which allows for small user interfaces to be displayed within the RStudio UI. Basically whenever the main function, `openeR_gadget()` of the package is called, a Shiny app is spun up and the output is then rendered in your script through functions found in the `rstudioapi ` package.
-
 ## Installation
 
 ```R
@@ -29,7 +27,5 @@ devtools::install_github("thomasalcock/openeR")
 
 ## Recommended Use
 
-The package's main function `openeR_gadget()` is best used with a short cut. To add a short cut to your Rstudio Environment go to 'Tools' > 'Modify Keyboard Short Cuts' and then search for 'Insert user defined doc skeleton'. Click on the field in the middle and choose a keyboad shortcut.
-
-Happy documenting!
+The package's main function `openeR_gadget()` is best used with a short cut. To add a short cut to your Rstudio Environment go to 'Tools' > 'Modify Keyboard Short Cuts' and then search for the  
 

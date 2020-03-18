@@ -18,12 +18,12 @@ openeR <- function(){
   position <- doc_context$selection[[1]]$range$start
 
   skeleton <- paste('# ----------------------------------------------------------------------------- #
-# Project:
-# Content:
-# Contributors:
-# Last update on:', Sys.Date(),'
-# Summary:
-# ----------------------------------------------------------------------------- #
+  # Project:
+  # Content:
+  # Contributors:
+  # Last update on:', Sys.Date(),'
+  # Summary:
+  # ----------------------------------------------------------------------------- #
 ')
 
   rstudioapi::insertText(

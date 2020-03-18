@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "0",
+    "hash" : "1098654163",
     "id" : "515F9CB0",
-    "lastKnownWriteTime" : 1584535684,
-    "last_content_update" : 1584535684954,
+    "lastKnownWriteTime" : 1584539830,
+    "last_content_update" : 1584539830499,
     "path" : "~/Projekte/openeR/R/openeR.R",
     "project_path" : "R/openeR.R",
     "properties" : {
-        "cursorPosition" : "6,32",
-        "scrollLine" : "0"
+        "cursorPosition" : "19,21",
+        "scrollLine" : "15"
     },
     "read_only" : false,
     "read_only_alternatives" : [
