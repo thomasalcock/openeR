@@ -13,13 +13,26 @@
 #' @examples
 openeR_gadget <- function(){
 
+  shinyOptions(
+    shiny.trace = FALSE,
+    shiny.santize.errors = TRUE
+  )
+
   ui <- miniUI::miniPage(
-    miniUI::gadgetTitleBar("Enter document information"),
+    miniUI::miniTitleBar(
+      title = "Enter document information"
+    ),
     miniUI::miniContentPanel(
       shiny::textInput("project_id", label = "", placeholder = "Enter project name"),
       shiny::textInput("content", label = "", placeholder = "Enter content"),
       shiny::textInput("contrib", label = "", placeholder = "Enter contributors"),
       shiny::textInput("summary", label = "", placeholder = "Enter summary")
+    ),
+    miniUI::miniButtonBlock(
+      shiny::actionButton(
+        inputId = "done",
+        label = "Done"
+      )
     )
   )
 
