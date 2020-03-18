@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1584439997137.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2829101111",
+    "id" : "2EEC037B",
+    "lastKnownWriteTime" : 1584534870,
+    "last_content_update" : 1584534870012,
+    "path" : "~/Projekte/openeR/inst/rstudio/addins.dcf",
+    "project_path" : "inst/rstudio/addins.dcf",
+    "properties" : {
+        "cursorPosition" : "8,17",
+        "scrollLine" : "0",
+        "tempName" : "Untitled2"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "dcf"
+}

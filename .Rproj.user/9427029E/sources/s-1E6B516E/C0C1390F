@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1584453994428.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "637185624",
+    "id" : "C0C1390F",
+    "lastKnownWriteTime" : 1584536298,
+    "last_content_update" : 1584536298221,
+    "path" : "~/Projekte/openeR/R/openeR_gadget.R",
+    "project_path" : "R/openeR_gadget.R",
+    "properties" : {
+        "cursorPosition" : "8,28",
+        "scrollLine" : "0",
+        "tempName" : "Untitled2"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
