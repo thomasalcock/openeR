@@ -1,9 +1,0 @@
-Name: Insert doc skeleton
-Description: Inserts a doc skeleton at the cursor position.
-Binding: openeR
-Interactive: false
-
-Name: Insert user defined doc skeleton
-Description: Inserts a user specified doc skeleton at the cursor position.
-Binding: openeR_gadget
-Interactve: false

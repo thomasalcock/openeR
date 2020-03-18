@@ -1,11 +1,12 @@
 Package: openeR
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Document your scripts using standardized in-line comments
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Author: Thomas Alcock
+Maintainer: Thomas Alcock <thomas.alcock@statworx.com>
+Description: openeR let's you document your (non-functional) scripts by inserting standardized
+    doc strings into your script at the cursor position. The packages main function, openeR_gadget()
+    should be used with an RStudio keyboard short cut. See the github README.md for more information.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

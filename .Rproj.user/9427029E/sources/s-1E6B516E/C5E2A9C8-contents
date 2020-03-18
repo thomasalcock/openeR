@@ -1,9 +1,0 @@
-skeleton <- paste(' # ----------------------------------------------------------------------------- #\n',
-                  '# Project:', "project_name", '\n',
-                  '# Content:', "content", '\n',
-                  '# Contributors:', "contrib", '\n',
-                  '# Last update on:', Sys.Date(), '\n',
-                  '# Summary:', "summary", '\n',
-                  '# ----------------------------------------------------------------------------- #')
-
-cat(skeleton)

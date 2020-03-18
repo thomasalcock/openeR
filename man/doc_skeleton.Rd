@@ -4,7 +4,7 @@
 \alias{doc_skeleton}
 \title{Inserts a user specified doc skeleton}
 \usage{
-doc_skeleton(project_name, content, contrib, summary)
+doc_skeleton(project_name, content, contrib, summary, section_header)
 }
 \arguments{
 \item{project_name}{The name of the project to which the skript belongs}
@@ -14,6 +14,8 @@ doc_skeleton(project_name, content, contrib, summary)
 \item{contrib}{Contributors ot the script}
 
 \item{summary}{More extensive description of the scripts contents}
+
+\item{section_header}{Name of the section to be created with the doc template}
 }
 \value{
 A doc skeleton with user specified inputs

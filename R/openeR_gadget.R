@@ -8,26 +8,47 @@
 #' go into 'Tools > Modify Keyboard Shortcuts' and then search for
 #' 'Insert a user specified doc skeleton'.
 #' @return A user specified doc skeleton
+#' @import shiny miniUI
 #' @export
-#'
-#' @examples
 openeR_gadget <- function(){
 
-  shinyOptions(
-    shiny.trace = FALSE,
-    shiny.santize.errors = TRUE
+  # Set options -------------------------------------------------------------
+  shiny::shinyOptions(
+    shiny.trace = FALSE
   )
 
+
+  # UI side -----------------------------------------------------------------
   ui <- miniUI::miniPage(
+
+    # Title bar ---------------------------------------------------------------
     miniUI::miniTitleBar(
       title = "Enter document information"
     ),
-    miniUI::miniContentPanel(
-      shiny::textInput("project_id", label = "", placeholder = "Enter project name"),
-      shiny::textInput("content", label = "", placeholder = "Enter content"),
-      shiny::textInput("contrib", label = "", placeholder = "Enter contributors"),
-      shiny::textInput("summary", label = "", placeholder = "Enter summary")
+    miniUI::miniTabstripPanel(
+
+    # First tab panel ---------------------------------------------------------
+      miniUI::miniTabPanel(
+        title = "Document Header",
+        miniUI::miniContentPanel(
+          shiny::textInput("project_id", label = "", placeholder = "Enter project name"),
+          shiny::textInput("content", label = "", placeholder = "Enter content"),
+          shiny::textInput("contrib", label = "", placeholder = "Enter contributors"),
+          shiny::textInput("summary", label = "", placeholder = "Enter summary")
+        )
+      ),
+
+      # Second tab panel --------------------------------------------------------
+      miniUI::miniTabPanel(
+        title = "Code Sections",
+        shiny::textInput(
+          inputId = "header_1",
+          label = "Section header"
+        )
+      )
     ),
+
+    # Bottom button -----------------------------------------------------------
     miniUI::miniButtonBlock(
       shiny::actionButton(
         inputId = "done",
@@ -36,16 +57,21 @@ openeR_gadget <- function(){
     )
   )
 
+  # Server side -------------------------------------------------------------
   server <- function(input, output, session) {
+
+      # Document info page ------------------------------------------------------
       shiny::observeEvent(input$done, {
-        shiny::stopApp(
+        shiny::stopApp({
           doc_skeleton(
             project_name = input$project_id,
             content = input$content,
             contrib = input$contrib,
-            summary = input$summary
+            summary = input$summary,
+            section_header = input$header_1
           )
-        )
+          create_section(sec_name = input$header1)
+        })
       })
   }
 

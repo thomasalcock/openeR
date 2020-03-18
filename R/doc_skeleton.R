@@ -4,7 +4,8 @@
 #' @param content Brief description of content of the script
 #' @param contrib Contributors ot the script
 #' @param summary More extensive description of the scripts contents
-#' @import
+#' @param section_header Name of the section to be created with the doc template
+#' @import rstudioapi
 #' @return A doc skeleton with user specified inputs
 #' @export
 #'
@@ -17,7 +18,11 @@
 #' summary = "This script prepares the data for modeling"
 #' )
 #' }
-doc_skeleton <- function(project_name, content, contrib, summary){
+doc_skeleton <- function(project_name,
+                         content,
+                         contrib,
+                         summary,
+                         section_header){
 
   doc_context <- rstudioapi::getActiveDocumentContext()
   position <- doc_context$selection[[1]]$range$start
@@ -27,7 +32,18 @@ doc_skeleton <- function(project_name, content, contrib, summary){
                     '# Contributors:', contrib, '\n',
                     '# Last update on:', Sys.Date(), '\n',
                     '# Summary:', summary, '\n',
-                    '# ----------------------------------------------------------------------------- #')
+                    '# ----------------------------------------------------------------------------- #'
+                    )
+
+  extra_section_header <- create_section(sec_name = section_header)
+
+  if(section_header != ""){
+    skeleton <- paste(
+      skeleton, '\n',
+      '# \n',
+      extra_section_header
+    )
+  }
 
   rstudioapi::insertText(
     location = position,

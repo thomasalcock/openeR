@@ -1,4 +1,0 @@
-devtools::document()
-devtools::check()
-devtools::build()
-install.packages("/Users/thomasalcock/Projekte/openeR_0.1.0.tar.gz", repos = NULL)
