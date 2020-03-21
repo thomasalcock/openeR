@@ -41,9 +41,13 @@ openeR_gadget <- function(){
       # Second tab panel --------------------------------------------------------
       miniUI::miniTabPanel(
         title = "Code Sections",
-        actionButton(
-          inputId = "add_section",
-          label = "Add section"
+        miniUI::miniButtonBlock(
+          actionButton(
+            inputId = "add_section",
+            label = "Add section"
+          ),
+          border = "bottom",
+          id = "add_section_block"
         )
       )
     ),
@@ -70,8 +74,8 @@ openeR_gadget <- function(){
         name <- paste("Section", input$add_section)
 
         shiny::insertUI(
-          selector = "#add_section",
-          where = "afterEnd",
+          selector = "#add_section_block",
+          where = "beforeBegin",
           ui = textInput(
             inputId = id,
             label = "",
