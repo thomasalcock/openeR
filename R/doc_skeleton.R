@@ -22,7 +22,7 @@ doc_skeleton <- function(project_name,
                          content,
                          contrib,
                          summary,
-                         section_header){
+                         section_headers){
 
   doc_context <- rstudioapi::getActiveDocumentContext()
   position <- doc_context$selection[[1]]$range$start
@@ -35,15 +35,15 @@ doc_skeleton <- function(project_name,
                     '# ----------------------------------------------------------------------------- #'
                     )
 
-  extra_section_header <- create_section(sec_name = section_header)
-
-  if(section_header != ""){
-    skeleton <- paste(
-      skeleton, '\n',
-      '# \n',
-      extra_section_header
-    )
+  for(header in section_headers){
+    if(header != ""){
+      skeleton <- paste(
+        skeleton, "\n \n",
+        create_section(header)
+      )
+    }
   }
+
 
   rstudioapi::insertText(
     location = position,
