@@ -34,7 +34,7 @@ openeR_gadget <- function(){
           shiny::textInput("project_id", label = "", placeholder = "Enter project name"),
           shiny::textInput("content", label = "", placeholder = "Enter content"),
           shiny::textInput("contrib", label = "", placeholder = "Enter contributors"),
-          shiny::textInput("summary", label = "", placeholder = "Enter summary")
+          shiny::textAreaInput("summary", label = "", placeholder = "Enter summary")
         )
       ),
 
@@ -43,7 +43,15 @@ openeR_gadget <- function(){
         title = "Code Sections",
         shiny::textInput(
           inputId = "header_1",
-          label = "Section header"
+          label = "Section 1 header"
+        ),
+        shiny::textInput(
+          inputId = "header_2",
+          label = "Section 2 header"
+        ),
+        shiny::textInput(
+          inputId = "header_3",
+          label = "Section 3 header"
         )
       )
     ),
@@ -62,15 +70,21 @@ openeR_gadget <- function(){
 
       # Document info page ------------------------------------------------------
       shiny::observeEvent(input$done, {
+
+        # extract headers from
+        headers <- sapply(1:3, function(x){
+          eval(parse(text = paste0("input$header_", x)))
+        })
+
+        # stop app once users click 'done'
         shiny::stopApp({
           doc_skeleton(
             project_name = input$project_id,
             content = input$content,
             contrib = input$contrib,
             summary = input$summary,
-            section_header = input$header_1
+            section_header = headers
           )
-          create_section(sec_name = input$header1)
         })
       })
   }
