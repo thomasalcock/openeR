@@ -43,15 +43,18 @@ openeR_gadget <- function(){
         title = "Code Sections",
         shiny::textInput(
           inputId = "header_1",
-          label = "Section 1 header"
+          label = "",
+          placeholder = "Section 1 header"
         ),
         shiny::textInput(
           inputId = "header_2",
-          label = "Section 2 header"
+          label = "",
+          placeholder = "Section 2 header"
         ),
         shiny::textInput(
           inputId = "header_3",
-          label = "Section 3 header"
+          label = "",
+          placeholder = "Section 3 header"
         )
       )
     ),
