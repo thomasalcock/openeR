@@ -41,20 +41,9 @@ openeR_gadget <- function(){
       # Second tab panel --------------------------------------------------------
       miniUI::miniTabPanel(
         title = "Code Sections",
-        shiny::textInput(
-          inputId = "header_1",
-          label = "",
-          placeholder = "Section 1 header"
-        ),
-        shiny::textInput(
-          inputId = "header_2",
-          label = "",
-          placeholder = "Section 2 header"
-        ),
-        shiny::textInput(
-          inputId = "header_3",
-          label = "",
-          placeholder = "Section 3 header"
+        actionButton(
+          inputId = "add_section",
+          label = "Add section"
         )
       )
     ),
@@ -71,11 +60,34 @@ openeR_gadget <- function(){
   # Server side -------------------------------------------------------------
   server <- function(input, output, session) {
 
+      # Track ui elements -------------------------------------------------------
+      inserted <- c()
+
+      # Render text inputs for sections -----------------------------------------
+      shiny::observeEvent(input$add_section, {
+
+        id <- paste0("header_", input$add_section)
+        name <- paste("Section", input$add_section)
+
+        shiny::insertUI(
+          selector = "#add_section",
+          where = "afterEnd",
+          ui = textInput(
+            inputId = id,
+            label = "",
+            placeholder = name
+          )
+        )
+
+        # add inserted elements to vector
+        inserted <<- c(input$add_section, inserted)
+      })
+
       # Document info page ------------------------------------------------------
       shiny::observeEvent(input$done, {
 
         # extract headers from
-        headers <- sapply(1:3, function(x){
+        headers <- sapply(1:length(inserted), function(x){
           eval(parse(text = paste0("input$header_", x)))
         })
 
