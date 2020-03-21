@@ -27,17 +27,19 @@ doc_skeleton <- function(project_name,
   doc_context <- rstudioapi::getActiveDocumentContext()
   position <- doc_context$selection[[1]]$range$start
 
-  skeleton <- paste(' # ----------------------------------------------------------------------------- # \n # Project:', project_name, '\n',
-                    '# Content:', content, '\n',
-                    '# Contributors:', contrib, '\n',
-                    '# Last update on:', Sys.Date(), '\n',
-                    '# Summary:', summary, '\n',
-                    '# ----------------------------------------------------------------------------- #'
-                    )
+  skeleton <- paste0(
+    '# ----------------------------------------------------------------------------- # \n',
+    '# Project: ', project_name, '\n',
+    '# Content: ', content, '\n',
+    '# Contributors: ', contrib, '\n',
+    '# Last update on: ', Sys.Date(), '\n',
+    '# Summary: ', summary, '\n',
+    '# ----------------------------------------------------------------------------- #'
+  )
 
   for(header in section_headers){
     if(header != ""){
-      skeleton <- paste(
+      skeleton <- paste0(
         skeleton, "\n \n",
         create_section(header)
       )
