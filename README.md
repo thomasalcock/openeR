@@ -29,7 +29,7 @@ devtools::install_github("thomasalcock/openeR")
 
 ## Recommended Use
 
-The package's main function `openeR_gadget()` is best used with a short cut. To add a short cut to your Rstudio Environment go to 'Tools' > 'Modify Keyboard Short Cuts' and then search for 'Insert user defined doc skeleton'. Click on the field in the middle and choose a keyboad shortcut.
+The package's main function `openeR_gadget()` is best used with a short cut. The default short cut is set to Cmd+Shift+9 on a Mac. To change the cut to your Rstudio Environment go to 'Tools' > 'Modify Keyboard Short Cuts' and then search for 'Insert user defined doc skeleton'. Click on the field in the middle and choose a keyboad shortcut.
 
 Happy documenting!
 
