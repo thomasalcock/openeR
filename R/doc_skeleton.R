@@ -38,7 +38,8 @@ doc_skeleton <- function(project_name,
   )
 
   for(header in section_headers){
-    if(header != ""){
+    cond <- header != ""
+    if(isTRUE(cond)){
       skeleton <- paste0(
         skeleton, "\n \n",
         create_section(header)

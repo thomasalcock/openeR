@@ -4,7 +4,7 @@
 \alias{doc_skeleton}
 \title{Inserts a user specified doc skeleton}
 \usage{
-doc_skeleton(project_name, content, contrib, summary, section_header)
+doc_skeleton(project_name, content, contrib, summary, section_headers)
 }
 \arguments{
 \item{project_name}{The name of the project to which the skript belongs}
