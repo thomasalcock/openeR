@@ -1,37 +1,35 @@
-## Welcome to GitHub Pages
+# openeR
 
-You can use the [editor on GitHub](https://github.com/thomasalcock/openeR/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+## Description
+The `openeR` package was created for developers to comfortably document their R code.
+Whether you're doing exploratory analyses, writing data prep sctipts or just plain experimenting around, 
+your code might not be as functional as if you were writing a package. 
+If it were, you'd just use the excellent `roxygen2` package.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+However, you still want to standardize your documentation across scripts, right? 
+Inserting the same opening documentation for your script can be a hassle (all of that copying and pasting, ugh!).
 
-### Markdown
+Enter **openeR**: This package allows you to easily set up standardized doc strings in your script, which (for now)
+contain the following:
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+1. The project ID or name
+2. A brief description / classification of the script
+3. The contributors to the script
+4. The date at which the documentation was set up
+5. A more detailed summary of the scripts contents
 
-```markdown
-Syntax highlighted code block
+How does it work? `openeR` is built on top of `shiny`and `miniUI`, which allows for small user interfaces to be displayed within the RStudio UI. Basically whenever the main function, `openeR_gadget()` of the package is called, a Shiny app is spun up and the output is then rendered in your script through functions found in the `rstudioapi ` package.
 
-# Header 1
-## Header 2
-### Header 3
+## Installation
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```R
+# install.packages("devtools")
+devtools::install_github("thomasalcock/openeR")
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## Recommended Use
 
-### Jekyll Themes
+The package's main function `openeR_gadget()` is best used with a short cut. The default short cut is set to Cmd+Shift+8 on a Mac. To change the cut to your Rstudio Environment go to 'Tools' > 'Modify Keyboard Short Cuts' and then search for 'Insert user defined doc skeleton'. Click on the field in the middle and choose a keyboad shortcut.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/thomasalcock/openeR/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Happy documenting!
 
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
