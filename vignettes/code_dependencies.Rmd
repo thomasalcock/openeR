@@ -7,7 +7,7 @@ output: html_document
 
 ## How functions are related
 
-```{r}
+```{r, echo=FALSE}
 suppressPackageStartupMessages(library(DependenciesGraphs))
 suppressMessages(devtools::load_all("."))
 x <- DependenciesGraphs::envirDependencies("package:openeR")
