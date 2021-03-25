@@ -1,0 +1,15 @@
+---
+title: "Code Overview"
+author: "Thomas Alcock"
+date: "3/25/2021"
+output: html_document
+---
+
+## How functions are related
+
+```{r}
+suppressPackageStartupMessages(library(DependenciesGraphs))
+suppressMessages(devtools::load_all("."))
+x <- DependenciesGraphs::envirDependencies("package:openeR")
+plot(x)
+```
